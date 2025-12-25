@@ -8,7 +8,8 @@ pipeline {
         COURSE = "Jenkins"
     }
     options {
-        timeout(time: 10, unit: 'SECONDS') 
+        timeout(time: 10, unit: 'MINUTES')
+        disableConcurrentBuilds()
         
     }
     stages {
@@ -19,7 +20,7 @@ pipeline {
                         echo "Building"
                         echo $COURSE
                         env
-                        sleep 10
+                        #sleep 10
                     """    
                }
             }
